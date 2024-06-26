@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Button, Form, Modal, Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import delImg from '../components/Images/delete.png';
+import editImg from '../components/Images/edit.jpg';
 
 function UserItems() {
   const [items, setItems] = useState([]);
@@ -191,32 +193,13 @@ function UserItems() {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowDeleteModal(false)}>
-            Cancel
+          <img style={{width:'25px' , height:'30px'}} src={editImg} alt='delete'></img>
           </Button>
           <Button variant="danger" onClick={handleConfirmDelete}>
-            Delete
+          <img style={{width:'25px' , height:'30px'}} src={delImg} alt='delete'></img>
           </Button>
         </Modal.Footer>
       </Modal>
-
-
-
-
-      {/* <Table striped bordered hover style={{ backgroundColor: 'white' }}>
-        <thead>
-          <tr>
-            <th>url</th>
-          </tr>
-        </thead>
-        <tbody>
-          {items.map((item) => (
-            <tr key={item._id}>
-              <td>{item.qrCodeUrl}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table> */}
-    
     </div>
   );
 }

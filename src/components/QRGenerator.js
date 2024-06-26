@@ -52,6 +52,17 @@ const QRGenerator = () => {
         }
     };
 
+
+    const getTodayDate = () => {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = (today.getMonth() + 1).toString().padStart(2, '0');
+        const day = today.getDate().toString().padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      };
+      const today = getTodayDate();
+
+
     return (
         <>{showContainer && (
         <Container className="mt-5" style={{ backgroundColor: 'white', height: '25rem' }}>
@@ -99,6 +110,7 @@ const QRGenerator = () => {
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
                         required
+                        max={today}
                     />
                 </Form.Group>
                 <Button type="submit" className="mt-3">Generate QR Code</Button>
