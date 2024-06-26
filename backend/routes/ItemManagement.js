@@ -97,11 +97,7 @@ router.post('/getitems', async (req, res) => {
 
 
   router.post('/updateitem', async(req,res)=>{
-    
-    // const data = req.body.imageUrl;
-    // console.log(data)
-    
-    // res.status(200).json({message:"successful working"})
+  // console.log("aaya hua data :",req.body.)
     try {
       const qrCodeUrl = req.body.imageUrl;
       const imgUrl = await Items.findOne({ qrCodeUrl: qrCodeUrl });
